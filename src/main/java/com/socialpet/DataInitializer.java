@@ -5,7 +5,6 @@ import com.socialpet.repository.*;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Component
@@ -31,13 +30,12 @@ public class DataInitializer {
         Vacina v1 = new Vacina();
         v1.setNome("Antirrábica");
         v1.setFabricante("PetPharma");
-        v1.setDataAplicacao(LocalDate.now().minusMonths(2));
         vacinaRepo.save(v1);
 
         Vacina v2 = new Vacina();
         v2.setNome("V10");
         v2.setFabricante("Bayer");
-        v2.setDataAplicacao(LocalDate.now().minusMonths(1));
+
         vacinaRepo.save(v2);
 
         Pet pet = new Pet();

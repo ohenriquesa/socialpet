@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -20,7 +19,6 @@ public class Vacina {
 
     private String nome;
     private String fabricante;
-    private LocalDate dataAplicacao;
 
     @ManyToMany(mappedBy = "vacinas")
     @JsonBackReference
