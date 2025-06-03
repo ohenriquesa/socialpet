@@ -1,21 +1,23 @@
 package com.socialpet.controller;
 
+import com.socialpet.dto.PetDTO;
 import com.socialpet.model.Pet;
 import com.socialpet.service.PetService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
 @RequestMapping("/pets")
 public class PetController {
-    private final PetService petService;
 
-    public PetController(PetService petService) {
-        this.petService = petService;
-    }
+    @Autowired
+    private  PetService petService;
+
 
     @GetMapping
-    public List<Pet> listarTodos() {
+    public List<PetDTO> listarTodos() {
         return petService.listarTodos();
     }
 
